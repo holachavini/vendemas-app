@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Captura de Catálogo con Inventario Inicial — VendeMás</title>
+<style>
+  :root { --indigo:#4F46E5; --teal:#069494; --bg:#F8F9FC; --card:#FFFFFF; --text:#1F2333; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 20px 80px; }
+  a.back { color:var(--indigo); text-decoration:none; font-size:14px; font-weight:600; }
+  h1 { font-size:26px; margin-top:24px; margin-bottom:4px; color:var(--indigo); }
+  .sub { color:#6B7280; margin-top:0; margin-bottom:28px; }
+  .card { background:var(--card); border-radius:16px; padding:24px 26px; box-shadow:0 1px 3px rgba(0,0,0,0.06); margin-bottom:16px; }
+  .card h2 { margin:0 0 10px; font-size:19px; color:var(--indigo); }
+  .card h3 { margin:22px 0 6px; font-size:15px; color:var(--teal); }
+  .card p { margin:0 0 12px; color:#374151; }
+  .card p:last-child { margin-bottom:0; }
+  ol.pasos { margin:0; padding-left:0; list-style:none; counter-reset:paso; }
+  ol.pasos li { counter-increment:paso; position:relative; padding-left:40px; margin-bottom:16px; color:#374151; }
+  ol.pasos li:last-child { margin-bottom:0; }
+  ol.pasos li::before { content:counter(paso); position:absolute; left:0; top:1px; width:26px; height:26px; border-radius:50%; background:var(--indigo); color:#fff; font-size:14px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .via { display:inline-block; background:#E8F4F4; color:var(--teal); font-size:11px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; padding:3px 9px; border-radius:99px; margin-bottom:8px; }
+  .via.alt { background:#EEEDFB; color:var(--indigo); }
+  .mk { background:linear-gradient(135deg,#4F46E5,#069494); color:#fff; text-align:center; }
+  .mk h2 { color:#fff; }
+  .mk p { color:rgba(255,255,255,.92); }
+  .btn { display:inline-block; background:#fff; color:var(--indigo); font-weight:700; font-size:16px; text-decoration:none; padding:14px 28px; border-radius:12px; margin:8px 0 10px; box-shadow:0 2px 8px rgba(0,0,0,.15); }
+  .mini { font-size:13px; color:rgba(255,255,255,.85); margin:0; }
+  .aviso { border-left:4px solid #F59E0B; background:#FFFBEB; border-radius:10px; padding:14px 16px; margin:16px 0; color:#78350F; font-size:14px; }
+  .aviso strong { color:#92400E; }
+  table { width:100%; border-collapse:collapse; font-size:14px; margin:8px 0 0; }
+  th, td { text-align:left; padding:9px 10px; border-bottom:1px solid #EEF0F5; vertical-align:top; }
+  th { color:var(--teal); font-size:12px; text-transform:uppercase; letter-spacing:.4px; }
+  td code { background:#F3F4F8; padding:2px 6px; border-radius:5px; font-size:13px; color:var(--indigo); }
+  .tabla-scroll { overflow-x:auto; }
+  .contacto { background:var(--indigo); color:#fff; text-align:center; }
+  .contacto p { color:rgba(255,255,255,.95); }
+  .contacto a { color:#fff; font-weight:700; font-size:17px; }
+  footer { text-align:center; margin-top:40px; font-size:13px; color:#9CA3AF; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../guias.html">&larr; Guías de Uso</a>
+    <h1>Captura de Catálogo con Inventario Inicial</h1>
+    <p class="sub">Importa cientos de productos a VendeMás en segundos, con un solo archivo.</p>
+
+    <div class="card">
+      <p>En cualquier negocio que queremos automatizar, la parte más compleja y engorrosa es la captura del catálogo de productos y del inventario real.</p>
+      <p>Afortunadamente, VendeMás cuenta con la mágica y superfácil opción de <strong>importar inventario inicial</strong> desde un archivo CSV, en cualquier comercio recién creado.</p>
+      <p>Si necesitas el catálogo de algún comercio o marca, escríbenos a <strong>holachavini@gmail.com</strong> con tus datos y el nombre, catálogo PDF o página del negocio que quieras. Si nos es posible hacerlo, a la brevedad te enviaremos el catálogo listo para importarlo a VendeMás.</p>
+    </div>
+
+    <div class="card mk">
+      <h2>¿Eres consultora Mary Kay?</h2>
+      <p>Tenemos el catálogo de productos con precios actualizados al 12 de septiembre de 2026: <strong>467 productos</strong> listos para importar.</p>
+      <a class="btn" href="archivos/Catalogo-Mary-Kay-2026-09-13.csv" download>Descargar catálogo Mary Kay (CSV)</a>
+      <p class="mini">Catalogo-Mary-Kay-2026-09-13.csv</p>
+    </div>
+
+    <div class="card">
+      <h2>Ahora elige tu camino</h2>
+      <p>Tienes dos opciones: la primera es mucho más rápida y fácil, pero menos completa; la segunda lleva un poco más de trabajo, pero es súper eficiente porque desde el primer día tendrás tu inventario real dentro de la app.</p>
+    </div>
+
+    <div class="card">
+      <span class="via">Primer camino · Fácil y rápido</span>
+      <h2>Importar el catálogo tal cual</h2>
+      <ol class="pasos">
+        <li>Descarga <strong>Catalogo-Mary-Kay-2026-09-13.csv</strong> y guárdalo en la aplicación <strong>Archivos</strong> de tu iPhone.</li>
+        <li>Crea tu comercio <strong>Mary Kay</strong> en VendeMás.</li>
+        <li>Entra a <strong>Inventario</strong> y selecciona el comercio que creaste. Debe estar <strong>sin ningún producto capturado</strong>.</li>
+        <li>Toca <strong>Importar inventario</strong> y busca el archivo <strong>Catalogo-Mary-Kay-2026-09-13.csv</strong> que guardaste en Archivos.</li>
+        <li>La app te mostrará la lista de productos. Solo toca <strong>Importar</strong>.</li>
+      </ol>
+      <p style="margin-top:16px;">Listo: ya tienes el catálogo completo en VendeMás. Después podrás ir capturando tu inventario real producto por producto desde la sección Inventario.</p>
+    </div>
+
+    <div class="card">
+      <span class="via alt">Segundo camino · Un poco más de trabajo</span>
+      <h2>Importar el catálogo con tu inventario real</h2>
+      <ol class="pasos">
+        <li>Descarga <strong>Catalogo-Mary-Kay-2026-09-13.csv</strong> en tu computadora.</li>
+        <li>Ábrelo en <strong>Excel</strong>, <strong>Numbers</strong> o el editor de hojas de cálculo de tu preferencia.</li>
+        <li>Captura el <strong>stock_inicial</strong> de tu inventario físico. Opcionalmente corrige el <strong>costo_unitario</strong>, ya que ese dato varía según la orden de compra de cada consultora; si lo dejas como está, en las próximas órdenes de compra que captures se irá ajustando el costo correcto.</li>
+        <li>Menos importante, puedes ajustar <strong>cantidad_minima</strong> y <strong>frecuenciaVenta</strong> de cada producto. Estos dos valores también los puedes ajustar después dentro de VendeMás, en la sección Inventario, para aprovechar los beneficios de la app.</li>
+        <li>Al guardar, asegúrate de que el archivo se quede en <strong>formato CSV</strong>. Si tu programa te ofrece otro formato, usa <strong>Guardar como</strong> y elige CSV.</li>
+        <li>Envía el archivo ya con tu inventario real a la aplicación <strong>Archivos</strong> de tu celular, donde tienes VendeMás. Puedes mandártelo por WhatsApp o por correo.</li>
+        <li>Sigue los <strong>pasos 2 al 5 del primer camino</strong> para importarlo.</li>
+      </ol>
+      <div class="aviso">
+        <strong>Muy importante:</strong> el archivo debe guardarse en formato CSV para que VendeMás pueda leerlo. Si lo guardas como .xlsx o .numbers, la app no podrá importarlo.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Qué significa cada columna del archivo</h2>
+      <div class="tabla-scroll">
+        <table>
+          <tr><th>Columna</th><th>Qué es</th></tr>
+          <tr><td><code>producto</code></td><td>Nombre del producto. Es el único dato obligatorio.</td></tr>
+          <tr><td><code>descripcion</code></td><td>Descripción corta que te ayuda a identificarlo o a explicárselo a tu clienta.</td></tr>
+          <tr><td><code>cantidad_minima</code></td><td>Cantidad mínima que quieres tener siempre en existencia. VendeMás te avisa cuando bajas de ahí.</td></tr>
+          <tr><td><code>frecuenciaVenta</code></td><td>Qué tan seguido se vende ese producto. Te ayuda a decidir qué reponer primero.</td></tr>
+          <tr><td><code>stock_inicial</code></td><td>Las piezas que tienes físicamente hoy. Déjalo vacío si vas por el primer camino.</td></tr>
+          <tr><td><code>costo_unitario</code></td><td>Lo que a ti te cuesta cada pieza. Con este dato VendeMás calcula tus ganancias.</td></tr>
+          <tr><td><code>precio_venta</code></td><td>El precio al que se lo vendes a tu clienta.</td></tr>
+        </table>
+      </div>
+      <h3>Si quieres armar tu propio catálogo</h3>
+      <p>Puedes usar este mismo archivo como plantilla para cualquier otro negocio: conserva exactamente los nombres de las columnas del primer renglón, borra los productos de ejemplo y captura los tuyos.</p>
+    </div>
+
+    <div class="card">
+      <h2>Y después de importar…</h2>
+      <p>Así de fácil tendrás el catálogo completo en VendeMás. Si elegiste el primer camino, continúa con la captura de tu inventario; la captura de clientas puedes hacerla conforme les empiezas a vender.</p>
+      <p>Recuerda que VendeMás tiene la opción de indicar <strong>Saldo Inicial</strong> al capturar una clienta por primera vez, si es que ya te debía algo. Y no olvides enviarles la nota de cada venta, pago y abono.</p>
+      <p>Verás lo mucho que te servirá VendeMás en unos pocos días.</p>
+    </div>
+
+    <div class="card contacto">
+      <p style="margin:0 0 4px;">¿Necesitas más asesoría o tienes alguna duda?</p>
+      <a href="mailto:holachavini@gmail.com">holachavini@gmail.com</a>
+      <p style="margin:8px 0 0; font-size:14px;">Con mucho gusto te apoyamos a la brevedad.</p>
+    </div>
+
+    <footer>
+      <p style="margin:0 0 10px; font-style:italic;">VendeMás es una herramienta independiente y no está afiliada, patrocinada ni respaldada por Mary Kay Inc. Los nombres de productos y precios se publican únicamente como apoyo a las consultoras y pueden variar; verifica siempre con tu catálogo oficial vigente.</p>
+      VendeMás &middot; Villa de Álvarez, Colima, México
+    </footer>
+  </div>
+</body>
+</html>
