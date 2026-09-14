@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Captura de Clientes, Saldo Inicial y Ventas — VendeMás</title>
+<style>
+  :root { --indigo:#4F46E5; --teal:#069494; --bg:#F8F9FC; --card:#FFFFFF; --text:#1F2333; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 20px 80px; }
+  a.back { color:var(--indigo); text-decoration:none; font-size:14px; font-weight:600; }
+  h1 { font-size:26px; margin-top:24px; margin-bottom:4px; color:var(--indigo); }
+  .sub { color:#6B7280; margin-top:0; margin-bottom:28px; }
+  .card { background:var(--card); border-radius:16px; padding:24px 26px; box-shadow:0 1px 3px rgba(0,0,0,0.06); margin-bottom:16px; }
+  .card h2 { margin:0 0 10px; font-size:19px; color:var(--indigo); }
+  .card h3 { margin:24px 0 6px; font-size:15px; color:var(--teal); }
+  .card p { margin:0 0 12px; color:#374151; }
+  .card p:last-child { margin-bottom:0; }
+  ol.pasos { margin:0; padding-left:0; list-style:none; counter-reset:paso; }
+  ol.pasos li { counter-increment:paso; position:relative; padding-left:40px; margin-bottom:16px; color:#374151; }
+  ol.pasos li:last-child { margin-bottom:0; }
+  ol.pasos li::before { content:counter(paso); position:absolute; left:0; top:1px; width:26px; height:26px; border-radius:50%; background:var(--indigo); color:#fff; font-size:14px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  ul.limpia { margin:0; padding-left:20px; color:#374151; }
+  ul.limpia li { margin-bottom:8px; }
+  ul.limpia li:last-child { margin-bottom:0; }
+  .via { display:inline-block; background:#E8F4F4; color:var(--teal); font-size:11px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; padding:3px 9px; border-radius:99px; margin-bottom:8px; }
+  .via.alt { background:#EEEDFB; color:var(--indigo); }
+  .tip { border-left:4px solid var(--teal); background:#F0FAFA; border-radius:10px; padding:14px 16px; margin:16px 0; color:#134E4A; font-size:14px; }
+  .tip strong { color:#0F766E; }
+  .aviso { border-left:4px solid #F59E0B; background:#FFFBEB; border-radius:10px; padding:14px 16px; margin:16px 0; color:#78350F; font-size:14px; }
+  .aviso strong { color:#92400E; }
+  .destacado { background:linear-gradient(135deg,#4F46E5,#069494); color:#fff; }
+  .destacado h2 { color:#fff; }
+  .destacado p { color:rgba(255,255,255,.93); }
+  table { width:100%; border-collapse:collapse; font-size:14px; margin:8px 0 0; }
+  th, td { text-align:left; padding:9px 10px; border-bottom:1px solid #EEF0F5; vertical-align:top; }
+  th { color:var(--teal); font-size:12px; text-transform:uppercase; letter-spacing:.4px; }
+  td strong { color:var(--indigo); }
+  .tabla-scroll { overflow-x:auto; }
+  .contacto { background:var(--indigo); color:#fff; text-align:center; }
+  .contacto p { color:rgba(255,255,255,.95); }
+  .contacto a { color:#fff; font-weight:700; font-size:17px; }
+  footer { text-align:center; margin-top:40px; font-size:13px; color:#9CA3AF; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../guias.html">&larr; Guías de Uso</a>
+    <h1>Captura de Clientes, Saldo Inicial y Ventas</h1>
+    <p class="sub">Da de alta a tus clientes en segundos, registra lo que ya te debían y empieza a venderles.</p>
+
+    <div class="card">
+      <p>Con tu catálogo ya cargado, el siguiente paso son tus clientes. No tienes que capturarlos todos de golpe: puedes irlos dando de alta conforme les empiezas a vender.</p>
+      <p>Y si algún cliente ya te debía dinero de antes de usar VendeMás, no hay problema: la app tiene la opción de <strong>Saldo Inicial</strong> para que esa deuda quede registrada desde el primer día.</p>
+    </div>
+
+    <div class="card">
+      <span class="via">Paso 1 · Alta</span>
+      <h2>Dar de alta un cliente</h2>
+      <ol class="pasos">
+        <li>Entra a la sección <strong>Clientes</strong> y toca el botón <strong>+</strong>.</li>
+        <li>Usa la opción de <strong>importar desde tus Contactos</strong>. Se trae automáticamente el nombre, la referencia, el teléfono, el correo y la dirección, si es que los tiene guardados.</li>
+        <li>Opcionalmente, indica la <strong>categoría</strong> del cliente y <strong>ajusta su ubicación en el mapa</strong>.</li>
+        <li>Toca <strong>Guardar</strong>.</li>
+      </ol>
+      <div class="tip">
+        <strong>Por qué conviene importar desde Contactos:</strong> te ahorra escribir cinco datos a mano por cada cliente. Si tienes 40 clientas en tu teléfono, la diferencia es de una tarde entera a unos cuantos minutos.
+      </div>
+      <h3>Para qué sirven la categoría y el mapa</h3>
+      <p>La <strong>categoría</strong> te sirve para agrupar y filtrar a tus clientes después. La <strong>ubicación en el mapa</strong> es la que usan las <strong>Rutas de Visita</strong>: si la ajustas bien desde ahora, más adelante VendeMás podrá calcularte la mejor ruta y avisarte cuando vayas pasando cerca.</p>
+    </div>
+
+    <div class="card">
+      <span class="via alt">Paso 2 · Saldo Inicial</span>
+      <h2>Registrar lo que el cliente ya te debía</h2>
+      <p>Al guardar el cliente, la app te lleva automáticamente a su <strong>historial de movimientos</strong>. Como es un cliente nuevo y todavía no tiene ningún movimiento, ahí te aparecerá la opción <strong>Saldo Inicial</strong>.</p>
+      <ol class="pasos">
+        <li>Toca <strong>Saldo Inicial</strong>.</li>
+        <li>Selecciona el <strong>comercio</strong> del cual le vas a indicar el saldo.</li>
+        <li>Captura el <strong>monto</strong> que el cliente te debe.</li>
+        <li>Toca <strong>Guardar</strong>. Se genera su primer movimiento y ese monto queda registrado como deuda.</li>
+      </ol>
+      <div class="aviso">
+        <strong>Ojo con el momento:</strong> la opción de Saldo Inicial aparece solo mientras el cliente no tenga ningún movimiento. Si ya te debía algo, captúraselo antes de hacerle su primera venta.
+      </div>
+      <p>Si el cliente <strong>no te debe nada</strong>, no hagas nada aquí: puedes empezar a venderle de inmediato.</p>
+    </div>
+
+    <div class="card destacado">
+      <h2>La sección Clientes es el corazón de VendeMás</h2>
+      <p>Es la pantalla que vas a usar todos los días. Desde el historial de cada cliente haces sus pedidos, sus ventas, sus pagos y abonos, y consultas todo lo que ha pasado con él. Si te aprendes esta pantalla, ya te aprendiste la app.</p>
+    </div>
+
+    <div class="card">
+      <span class="via">Paso 3 · Historial</span>
+      <h2>Qué hay en la pantalla del cliente</h2>
+      <p>Al seleccionar un cliente se abre su <strong>historial de movimientos</strong>. Desde ahí tienes todo a la mano:</p>
+      <div class="tabla-scroll">
+        <table>
+          <tr><th>Dónde</th><th>Qué hace</th></tr>
+          <tr><td><strong>Ícono del carrito</strong><br>abajo a la izquierda</td><td>Inicia una <strong>nueva venta</strong>, o le da seguimiento a un <strong>pedido guardado</strong> si el cliente tiene uno pendiente.</td></tr>
+          <tr><td><strong>Ícono abajo a la derecha</strong><br>de una tarjeta de movimiento</td><td>Registra un <strong>pago o abono</strong> del saldo pendiente de ese movimiento.</td></tr>
+          <tr><td><strong>Navegar a su ubicación</strong></td><td>Abre la ruta hacia la dirección del cliente.</td></tr>
+          <tr><td><strong>Actualizar ubicación</strong></td><td>Corrige el punto en el mapa, por ejemplo cuando ya estás afuera de su casa.</td></tr>
+          <tr><td><strong>Compartir PDF</strong></td><td>Genera su estado de cuenta del <strong>último día, última semana o último mes</strong> y lo manda por WhatsApp, correo o cualquier otro medio.</td></tr>
+          <tr><td><strong>Llamar</strong></td><td>Le marca por teléfono sin salir de la app.</td></tr>
+          <tr><td><strong>Editar cliente</strong></td><td>Cambia sus datos, su categoría o su ubicación.</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="via alt">Paso 4 · Venta</span>
+      <h2>Hacer una venta o surtir un pedido</h2>
+      <p>Toca el <strong>ícono del carrito</strong>. Se abre la ventana <strong>Nueva venta</strong> (o <strong>Surtir pedido</strong>, si le estás dando seguimiento a uno guardado) con los productos seleccionados.</p>
+
+      <h3>Lo que puedes hacer ahí</h3>
+      <ul class="limpia">
+        <li><strong>Agregar productos</strong> — abre un buscador muy completo: busca por comercio o por una o varias palabras clave, y te muestra el stock y el precio de cada producto, además de la cantidad si ya lo tienes agregado a esta venta.</li>
+        <li><strong>Incrementar la cantidad</strong> de cualquier producto.</li>
+        <li><strong>Borrar</strong> un producto de la venta o del pedido.</li>
+        <li><strong>Aplicar descuento</strong>: uno global a todos los productos, o uno individual producto por producto.</li>
+      </ul>
+
+      <div class="tip">
+        <strong>El stock siempre a la vista:</strong> la app te muestra el stock actual en todo momento, ya descontando lo que llevas agregado a esta venta. Así nunca vendes algo que en realidad ya comprometiste en la misma nota.
+      </div>
+
+      <h3>Si un producto no tiene existencia</h3>
+      <p>Los productos con <strong>stock en cero se marcan en naranja</strong>. Si aun así vendes, VendeMás lo resuelve solo: <strong>vende lo que sí tienes en existencia y deja como pedido lo que no</strong>. No pierdes la venta ni tienes que llevar la cuenta aparte de lo que le quedaste debiendo a tu cliente.</p>
+
+      <h3>Los cuatro botones de arriba</h3>
+      <div class="tabla-scroll">
+        <table>
+          <tr><th>Botón</th><th>Cuándo usarlo</th></tr>
+          <tr><td><strong>Vender</strong></td><td>Cierras la venta. Se descuenta el inventario y se genera el movimiento en el historial del cliente.</td></tr>
+          <tr><td><strong>Guardar pedido</strong></td><td>El cliente apartó productos pero todavía no se los entregas. Queda pendiente y lo retomas después desde el carrito.</td></tr>
+          <tr><td><strong>Surtir pedido</strong></td><td>Ya tienes la mercancía del pedido guardado y se la vas a entregar.</td></tr>
+          <tr><td><strong>Borrar pedido</strong></td><td>El cliente se arrepintió o el pedido ya no procede.</td></tr>
+        </table>
+      </div>
+      <p style="margin-top:14px;">Al terminar, la app te regresa al historial del cliente con el movimiento ya registrado.</p>
+    </div>
+
+    <div class="card">
+      <span class="via">Paso 5 · Cobro</span>
+      <h2>Registrar un pago o un abono</h2>
+      <p>En el historial del cliente, busca la tarjeta del movimiento que tiene saldo pendiente y toca el <strong>ícono de abajo a la derecha</strong> de esa tarjeta. Ahí capturas el pago completo o el abono parcial.</p>
+      <p>El saldo del cliente se actualiza al instante, así que en cualquier momento puedes abrir su historial y saber exactamente cuánto te debe, sin libreta ni cuentas de memoria.</p>
+      <div class="tip">
+        <strong>Manda siempre la nota.</strong> Después de cada venta, pago o abono, comparte el PDF con tu cliente por WhatsApp. Es el hábito que más te va a evitar malentendidos, y además se ve muy profesional.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Y ya con eso, estás operando</h2>
+      <p>Catálogo cargado, clientes dados de alta, ventas y cobros registrados. De aquí en adelante VendeMás ya te está llevando el inventario, las deudas y el historial de cada persona.</p>
+      <p>El siguiente paso natural son las <strong>órdenes de compra</strong>, para que tu costo real se vaya afinando con cada pedido que le haces a tu proveedor, y las <strong>rutas de visita</strong>, para organizar a quién le toca cada día.</p>
+    </div>
+
+    <div class="card contacto">
+      <p style="margin:0 0 4px;">¿Necesitas más asesoría o tienes alguna duda?</p>
+      <a href="mailto:holachavini@gmail.com">holachavini@gmail.com</a>
+      <p style="margin:8px 0 0; font-size:14px;">Con mucho gusto te apoyamos a la brevedad.</p>
+    </div>
+
+    <footer>VendeMás &middot; Villa de Álvarez, Colima, México</footer>
+  </div>
+</body>
+</html>
