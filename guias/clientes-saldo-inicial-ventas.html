@@ -14,7 +14,7 @@
   .sub { color:#6B7280; margin-top:0; margin-bottom:28px; }
   .card { background:var(--card); border-radius:16px; padding:24px 26px; box-shadow:0 1px 3px rgba(0,0,0,0.06); margin-bottom:16px; }
   .card h2 { margin:0 0 10px; font-size:19px; color:var(--indigo); }
-  .card h3 { margin:24px 0 6px; font-size:15px; color:var(--teal); }
+  .card h3 { margin:26px 0 6px; font-size:15px; color:var(--teal); }
   .card p { margin:0 0 12px; color:#374151; }
   .card p:last-child { margin-bottom:0; }
   ol.pasos { margin:0; padding-left:0; list-style:none; counter-reset:paso; }
@@ -33,6 +33,11 @@
   .destacado { background:linear-gradient(135deg,#4F46E5,#069494); color:#fff; }
   .destacado h2 { color:#fff; }
   .destacado p { color:rgba(255,255,255,.93); }
+  figure { margin:20px 0 0; }
+  figure img { display:block; width:100%; max-width:270px; margin:0 auto; border-radius:20px; border:1px solid #E6E8F0; box-shadow:0 6px 20px rgba(31,35,51,.13); }
+  figcaption { font-size:13px; color:#6B7280; text-align:center; margin-top:10px; max-width:340px; margin-left:auto; margin-right:auto; }
+  .figs { display:flex; flex-wrap:wrap; gap:22px; justify-content:center; }
+  .figs figure { flex:1 1 230px; max-width:280px; margin-top:20px; }
   table { width:100%; border-collapse:collapse; font-size:14px; margin:8px 0 0; }
   th, td { text-align:left; padding:9px 10px; border-bottom:1px solid #EEF0F5; vertical-align:top; }
   th { color:var(--teal); font-size:12px; text-transform:uppercase; letter-spacing:.4px; }
@@ -81,6 +86,10 @@
         <li>Captura el <strong>monto</strong> que el cliente te debe.</li>
         <li>Toca <strong>Guardar</strong>. Se genera su primer movimiento y ese monto queda registrado como deuda.</li>
       </ol>
+      <figure>
+        <img src="img/historial-cliente.webp" alt="Historial de movimientos de un cliente en VendeMás, con el saldo inicial registrado y la deuda visible bajo el nombre." width="620" height="1347">
+        <figcaption>El saldo inicial queda como el primer movimiento, y la deuda del cliente aparece siempre bajo su nombre.</figcaption>
+      </figure>
       <div class="aviso">
         <strong>Ojo con el momento:</strong> la opción de Saldo Inicial aparece solo mientras el cliente no tenga ningún movimiento. Si ya te debía algo, captúraselo antes de hacerle su primera venta.
       </div>
@@ -95,17 +104,16 @@
     <div class="card">
       <span class="via">Paso 3 · Historial</span>
       <h2>Qué hay en la pantalla del cliente</h2>
-      <p>Al seleccionar un cliente se abre su <strong>historial de movimientos</strong>. Desde ahí tienes todo a la mano:</p>
+      <p>Al seleccionar un cliente se abre su <strong>historial de movimientos</strong>, con su deuda actual siempre visible bajo el nombre. Desde ahí tienes todo a la mano:</p>
       <div class="tabla-scroll">
         <table>
           <tr><th>Dónde</th><th>Qué hace</th></tr>
-          <tr><td><strong>Ícono del carrito</strong><br>abajo a la izquierda</td><td>Inicia una <strong>nueva venta</strong>, o le da seguimiento a un <strong>pedido guardado</strong> si el cliente tiene uno pendiente.</td></tr>
-          <tr><td><strong>Ícono abajo a la derecha</strong><br>de una tarjeta de movimiento</td><td>Registra un <strong>pago o abono</strong> del saldo pendiente de ese movimiento.</td></tr>
-          <tr><td><strong>Navegar a su ubicación</strong></td><td>Abre la ruta hacia la dirección del cliente.</td></tr>
-          <tr><td><strong>Actualizar ubicación</strong></td><td>Corrige el punto en el mapa, por ejemplo cuando ya estás afuera de su casa.</td></tr>
-          <tr><td><strong>Compartir PDF</strong></td><td>Genera su estado de cuenta del <strong>último día, última semana o último mes</strong> y lo manda por WhatsApp, correo o cualquier otro medio.</td></tr>
-          <tr><td><strong>Llamar</strong></td><td>Le marca por teléfono sin salir de la app.</td></tr>
-          <tr><td><strong>Editar cliente</strong></td><td>Cambia sus datos, su categoría o su ubicación.</td></tr>
+          <tr><td><strong>Ícono del carrito</strong><br>abajo a la izquierda</td><td>Inicia una <strong>nueva venta</strong>, o le da seguimiento a un <strong>pedido guardado</strong> si el cliente tiene uno pendiente. El globito rojo te dice cuántos productos trae.</td></tr>
+          <tr><td><strong>Ícono de la tarjeta</strong><br>abajo a la derecha</td><td>Registra un <strong>pago o abono</strong> del saldo pendiente.</td></tr>
+          <tr><td><strong>Tocar un movimiento</strong></td><td>Abre el <strong>detalle</strong> de esa venta o de ese pago.</td></tr>
+          <tr><td><strong>Flecha de navegación</strong><br>arriba a la izquierda</td><td>Te lleva a la <strong>ubicación</strong> del cliente, y desde aquí también puedes actualizar su punto en el mapa.</td></tr>
+          <tr><td><strong>Ícono de compartir</strong><br>arriba a la derecha</td><td>Genera su estado de cuenta en <strong>PDF</strong> del último día, última semana o último mes, y lo manda por WhatsApp, correo o cualquier otro medio.</td></tr>
+          <tr><td><strong>Teléfono y lápiz</strong><br>a la derecha del nombre</td><td><strong>Llamar</strong> al cliente o <strong>editar</strong> sus datos.</td></tr>
         </table>
       </div>
     </div>
@@ -113,22 +121,44 @@
     <div class="card">
       <span class="via alt">Paso 4 · Venta</span>
       <h2>Hacer una venta o surtir un pedido</h2>
-      <p>Toca el <strong>ícono del carrito</strong>. Se abre la ventana <strong>Nueva venta</strong> (o <strong>Surtir pedido</strong>, si le estás dando seguimiento a uno guardado) con los productos seleccionados.</p>
+      <p>Toca el <strong>ícono del carrito</strong>. Se abre la ventana <strong>Nueva venta</strong> (o <strong>Surtir pedido</strong>, si le estás dando seguimiento a uno guardado) con los productos seleccionados, el stock de cada uno y el total abajo en todo momento.</p>
 
-      <h3>Lo que puedes hacer ahí</h3>
-      <ul class="limpia">
-        <li><strong>Agregar productos</strong> — abre un buscador muy completo: busca por comercio o por una o varias palabras clave, y te muestra el stock y el precio de cada producto, además de la cantidad si ya lo tienes agregado a esta venta.</li>
-        <li><strong>Incrementar la cantidad</strong> de cualquier producto.</li>
-        <li><strong>Borrar</strong> un producto de la venta o del pedido.</li>
-        <li><strong>Aplicar descuento</strong>: uno global a todos los productos, o uno individual producto por producto.</li>
-      </ul>
+      <figure>
+        <img src="img/surtir-pedido.webp" alt="Pantalla Surtir pedido de VendeMás con dos productos, sus controles de cantidad y descuento, la forma de pago y el total." width="620" height="1347" loading="lazy">
+        <figcaption>Cada producto muestra su stock, su cantidad y su descuento. Abajo, el total del pedido y el saldo que quedaría después del pago.</figcaption>
+      </figure>
+
+      <h3>Agregar productos</h3>
+      <p>El botón <strong>Agregar producto</strong> abre un buscador muy completo: filtra por <strong>comercio</strong> o escribe una o varias <strong>palabras clave</strong>. De cada producto ves su stock y su precio, y si ya lo tienes agregado a esta venta, también la cantidad.</p>
+
+      <figure>
+        <img src="img/busca-productos.webp" alt="Buscador de productos de VendeMás con filtros por comercio, stock y precio de cada producto." width="620" height="1347" loading="lazy">
+        <figcaption>Filtra por comercio o busca por palabras clave, sin perder de vista el total del pedido que llevas.</figcaption>
+      </figure>
+
+      <h3>Descuentos</h3>
+      <p>Puedes aplicar un <strong>descuento a todo</strong> el pedido, o un <strong>descuento individual</strong> producto por producto. La app te muestra el precio original tachado, el precio con descuento y cuánto le estás rebajando a tu cliente.</p>
+
+      <figure>
+        <img src="img/descuentos.webp" alt="Pantalla de VendeMás mostrando un descuento global del 10% y uno individual del 50% en un producto." width="620" height="1347" loading="lazy">
+        <figcaption>Un 10% a todo el pedido y un 50% extra a un producto: siempre ves el precio anterior y el ahorro.</figcaption>
+      </figure>
 
       <div class="tip">
-        <strong>El stock siempre a la vista:</strong> la app te muestra el stock actual en todo momento, ya descontando lo que llevas agregado a esta venta. Así nunca vendes algo que en realidad ya comprometiste en la misma nota.
+        <strong>El stock siempre a la vista:</strong> la app te muestra el stock actual en todo momento, ya descontando lo que llevas agregado a esta venta. Así nunca vendes dos veces lo mismo en la misma nota.
       </div>
 
       <h3>Si un producto no tiene existencia</h3>
-      <p>Los productos con <strong>stock en cero se marcan en naranja</strong>. Si aun así vendes, VendeMás lo resuelve solo: <strong>vende lo que sí tienes en existencia y deja como pedido lo que no</strong>. No pierdes la venta ni tienes que llevar la cuenta aparte de lo que le quedaste debiendo a tu cliente.</p>
+      <p>Cuando agregas algo de lo que no tienes suficiente, el producto se marca en <strong>naranja</strong> y aparece un aviso arriba. Aquí está lo bueno: VendeMás lo resuelve solo. <strong>Vende lo que sí tienes en existencia y manda a un nuevo pedido lo que falta.</strong> No pierdes la venta ni tienes que llevar aparte la cuenta de lo que le quedaste debiendo.</p>
+
+      <figure>
+        <img src="img/sin-stock.webp" alt="Aviso naranja en VendeMás: un producto sin stock suficiente se venderá lo disponible y el resto pasará a nuevo pedido." width="620" height="1347" loading="lazy">
+        <figcaption>El aviso es claro: se vende lo disponible y lo faltante se convierte en pedido, automáticamente.</figcaption>
+      </figure>
+
+      <h3>Cobrar en el momento</h3>
+      <p>En la misma pantalla, abajo, tienes la sección <strong>Pagos</strong>: eliges <strong>Efectivo</strong>, <strong>Transferencia</strong> o <strong>Retiro sin tarjeta</strong>, capturas el monto y la app te calcula el saldo que queda. También puedes ajustar la <strong>fecha de venta</strong>, muy útil cuando estás capturando algo que pasó otro día.</p>
+      <p>Y si eres varias personas vendiendo, en <strong>Vendedor</strong> indicas quién hizo esta venta.</p>
 
       <h3>Los cuatro botones de arriba</h3>
       <div class="tabla-scroll">
@@ -146,8 +176,27 @@
     <div class="card">
       <span class="via">Paso 5 · Cobro</span>
       <h2>Registrar un pago o un abono</h2>
-      <p>En el historial del cliente, busca la tarjeta del movimiento que tiene saldo pendiente y toca el <strong>ícono de abajo a la derecha</strong> de esa tarjeta. Ahí capturas el pago completo o el abono parcial.</p>
-      <p>El saldo del cliente se actualiza al instante, así que en cualquier momento puedes abrir su historial y saber exactamente cuánto te debe, sin libreta ni cuentas de memoria.</p>
+      <p>En el historial del cliente, toca el <strong>ícono de la tarjeta</strong>, abajo a la derecha. Ahí capturas el pago completo o el abono parcial, eliges la <strong>forma de pago</strong> e indicas la <strong>fecha</strong>, para que la actividad del cliente quede con las fechas correctas aunque la captures después.</p>
+      <div class="tip">
+        <strong>Los abonos se aplican solos, y bien:</strong> VendeMás siempre abona primero las <strong>deudas más antiguas</strong>, completas o parciales según el monto que recibiste. Tú solo capturas lo que te pagaron; la app decide a qué venta le corresponde.
+      </div>
+      <h3>¿Te equivocaste al capturar?</h3>
+      <p>Mantén presionado el movimiento del pago y con el menú que aparece puedes <strong>editar la forma de pago, el monto o la fecha</strong>.</p>
+      <figure>
+        <img src="img/editar-pago.webp" alt="Menú contextual Editar pago sobre un movimiento del historial del cliente en VendeMás." width="620" height="1347" loading="lazy">
+        <figcaption>Cada pago se puede corregir después, sin tener que borrar la venta.</figcaption>
+      </figure>
+    </div>
+
+    <div class="card">
+      <span class="via alt">Extra</span>
+      <h2>Ver el detalle de una venta y cancelarla</h2>
+      <p>Toca cualquier venta del historial y se abre su <strong>detalle completo</strong>: fecha, vendedor, productos con sus descuentos y lo que ahorró tu cliente, el total, los pagos registrados y el saldo pendiente.</p>
+      <p>Desde ahí también puedes <strong>cancelar esa venta</strong> si se capturó por error o el cliente devolvió la mercancía.</p>
+      <figure>
+        <img src="img/detalle-venta.webp" alt="Detalle de una venta en VendeMás con productos, descuentos, pagos registrados, saldo pendiente y la opción de cancelar la venta." width="620" height="1347" loading="lazy">
+        <figcaption>Todo el desglose de la venta en una sola vista, con la opción de cancelarla al final.</figcaption>
+      </figure>
       <div class="tip">
         <strong>Manda siempre la nota.</strong> Después de cada venta, pago o abono, comparte el PDF con tu cliente por WhatsApp. Es el hábito que más te va a evitar malentendidos, y además se ve muy profesional.
       </div>
@@ -165,7 +214,10 @@
       <p style="margin:8px 0 0; font-size:14px;">Con mucho gusto te apoyamos a la brevedad.</p>
     </div>
 
-    <footer>VendeMás &middot; Villa de Álvarez, Colima, México</footer>
+    <footer>
+      <p style="margin:0 0 10px; font-style:italic;">Las imágenes de esta guía son capturas de la app con datos de ejemplo.</p>
+      VendeMás &middot; Villa de Álvarez, Colima, México
+    </footer>
   </div>
 </body>
 </html>
