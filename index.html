@@ -15,6 +15,14 @@
   .card { background:var(--card); border-radius:16px; padding:20px 22px; margin-bottom:16px; box-shadow:0 1px 3px rgba(0,0,0,0.06); text-decoration:none; display:block; color:var(--text); }
   .card h2 { margin:0 0 4px; font-size:17px; color:var(--indigo); }
   .card p { margin:0; font-size:14px; color:#6B7280; }
+  .legales { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:28px; }
+  .grupo { background:var(--card); border-radius:16px; padding:20px 22px; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
+  .grupo h3 { margin:0 0 2px; font-size:16px; color:var(--indigo); }
+  .grupo .disp { margin:0 0 14px; font-size:12px; color:#9CA3AF; text-transform:uppercase; letter-spacing:.4px; font-weight:700; }
+  .grupo a { display:block; padding:9px 0; font-size:15px; color:var(--text); text-decoration:none; border-top:1px solid #EEF0F5; }
+  .grupo a:first-of-type { border-top:none; }
+  .grupo a span { color:var(--teal); font-size:13px; display:block; }
+  .titulo-legales { text-align:center; font-size:13px; color:#9CA3AF; text-transform:uppercase; letter-spacing:.6px; font-weight:700; margin:36px 0 0; }
   footer { text-align:center; margin-top:40px; font-size:13px; color:#9CA3AF; }
 </style>
 </head>
@@ -29,20 +37,23 @@
       <p>Instrucciones paso a paso para aprovechar VendeMás al máximo.</p>
     </a>
 
-    <a class="card" href="privacidad.html">
-      <h2>Aviso de Privacidad</h2>
-      <p>Cómo protegemos tu información y la de tus clientes.</p>
-    </a>
-
-    <a class="card" href="terminos.html">
-      <h2>Términos de Uso</h2>
-      <p>Condiciones de uso de la app y de las suscripciones.</p>
-    </a>
-
-    <a class="card" href="soporte.html">
-      <h2>Soporte</h2>
-      <p>Preguntas frecuentes y cómo contactarnos.</p>
-    </a>
+    <p class="titulo-legales">Información legal y soporte</p>
+    <div class="legales">
+      <div class="grupo">
+        <h3>iPhone y iPad</h3>
+        <p class="disp">App Store</p>
+        <a href="privacidad.html">Aviso de Privacidad</a>
+        <a href="terminos.html">Términos de Uso</a>
+        <a href="soporte.html">Soporte</a>
+      </div>
+      <div class="grupo">
+        <h3>Android</h3>
+        <p class="disp">Google Play</p>
+        <a href="privacidad-android.html">Aviso de Privacidad</a>
+        <a href="terminos-android.html">Términos de Uso</a>
+        <a href="soporte-android.html">Soporte</a>
+      </div>
+    </div>
 
     <footer>VendeMás &middot; Villa de Álvarez, Colima, México</footer>
   </div>
